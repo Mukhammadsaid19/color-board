@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-content">Color Fiesta</div>
+      </div>
+
+      <div class="row">
+        <div class="side">
+          <div id="colorBox">
+            <p id="colorValue">#000000</p>
+          </div>
+
+          <div class="sliders">
+            <div>
+              <p>RED</p>
+              <input
+                onChange="changeRGB()"
+                oninput="changeRGB()"
+                type="range"
+                id="slideRed"
+                name="slideRed"
+                value="0"
+                min="0"
+                max="255"
+              />
+            </div>
+
+            <div>
+              <p>GREEN</p>
+              <input
+                onChange="changeRGB()"
+                oninput="changeRGB()"
+                type="range"
+                id="slideGreen"
+                name="slideGreen"
+                value="0"
+                min="0"
+                max="255"
+              />
+            </div>
+
+            <div>
+              <p>BLUE</p>
+              <input
+                onChange="changeRGB()"
+                oninput="changeRGB()"
+                type="range"
+                id="slideBlue"
+                name="slideBlue"
+                value="0"
+                min="0"
+                max="255"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="main">
+          <div class="tab-header">
+            <h3 id="tintsTab" onClick="changeTints()" class="selected">
+              Tints
+            </h3>
+            <h3 id="shadesTab" onClick="changeShades()">Shades</h3>
+          </div>
+
+          <div class="tab-content">
+            <div id="tintsContent" class="show">
+              <h1>Tints</h1>
+              <!-- <input type="text" class="count-input" /> -->
+              <input
+                onChange="generateTints()"
+                oninput="generateTints()"
+                type="range"
+                min="0"
+                max="20"
+                class="count-range"
+                id="tintCounter"
+                name="tintCounter"
+                value="1"
+              />
+
+              <div class="color-grid" id="colorGrid">
+                <div class="color-cell">
+                  <div class="color-item" id="firstTint"></div>
+                </div>
+              </div>
+            </div>
+            <div id="shadesContent">Shades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="color.js"></script>
+    <script src="tab.js"></script>
+    <script src="tints.js"></script>
+  </body>
+</html>
