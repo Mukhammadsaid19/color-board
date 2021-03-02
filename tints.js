@@ -1,10 +1,8 @@
-let tintSlider = document.getElementById("tintCounter");
+let tintSlider = document.getElementById("tintSlider");
 let colorGrid = document.getElementById("colorGrid");
 
 // generates tiles appends them when necessary based on the different of current tiles to the desired one
 function generateTints() {
-  let currentColor = document.getElementById("colorValue").innerText;
-
   let currentSliderCount = parseInt(tintSlider.value, 10);
   let currentChildrenCount = colorGrid.childElementCount;
 
@@ -39,8 +37,6 @@ function refreshAllTiles() {
       currentFactor * i
     );
   }
-
-  console.log(currentFactor);
 }
 
 function generateTint(colorValue, step) {
