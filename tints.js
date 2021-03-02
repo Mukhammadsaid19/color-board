@@ -1,5 +1,6 @@
 let tintSlider = document.getElementById("tintSlider");
 let colorGrid = document.getElementById("colorGrid");
+let tintsCounter = document.getElementById("tintsCounter");
 
 // generates tiles appends them when necessary based on the different of current tiles to the desired one
 function generateTints() {
@@ -23,7 +24,31 @@ function generateTints() {
       );
     }
   }
+  synchronizeSliderWithCounter();
   refreshAllTiles();
+}
+
+function validateCounter() {
+  tintsCounter.value = tintsCounter.value.replace(/[^0-9]/, "");
+  let currentValue = parseInt(tintsCounter.value, 10);
+  if (currentValue <= 0) {
+    tintsCounter.value = "0";
+  }
+
+  if (currentValue >= 20) {
+    tintsCounter.value = "20";
+  }
+
+  synchronizeCounterWithSlider();
+}
+
+function synchronizeCounterWithSlider() {
+  tintSlider.value = tintsCounter.value;
+  generateTints();
+}
+
+function synchronizeSliderWithCounter() {
+  tintsCounter.value = tintSlider.value;
 }
 
 function refreshAllTiles() {

@@ -76,7 +76,12 @@
             <div id="tintsContent" class="show">
               <h1>Tints</h1>
 
-              <input type="text" class="count-input" />
+              <input
+                type="number"
+                class="count-input"
+                id="tintsCounter"
+                onkeyup="validateCounter()"
+              />
               <input
                 onChange="generateTints()"
                 oninput="generateTints()"

@@ -22,11 +22,31 @@
   cursor: pointer;
 }
 
-input[type="text"] {
+input[type="number"] {
   width: 60px;
   height: 40px;
   padding: 0px 12px;
   margin: 0px 20px 0px 5px;
   font-size: 1.5em;
   font-family: Roboto, sans-serif;
+  appearance: textfield;
+  border: 1px solid #323232;
+  border-radius: 5px;
+}
+
+/* Chrome */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]:focus {
+  border: 2px solid #005ca9;
 }
