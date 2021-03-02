@@ -1,9 +1,6 @@
 let tintSlider = document.getElementById("tintCounter");
 let colorGrid = document.getElementById("colorGrid");
 
-const FACTOR = 0.05;
-let CURRENT_TINT = 1;
-
 // generates tiles appends them when necessary based on the different of current tiles to the desired one
 function generateTints() {
   let currentColor = document.getElementById("colorValue").innerText;
@@ -18,11 +15,6 @@ function generateTints() {
       let colorItem = document.createElement("DIV");
       colorItem.className = "color-item";
 
-      colorItem.style.backgroundColor = generateTint(
-        currentColor,
-        CURRENT_TINT
-      );
-      CURRENT_TINT++;
       colorCell.appendChild(colorItem);
       colorGrid.appendChild(colorCell);
     }
@@ -31,10 +23,24 @@ function generateTints() {
       colorGrid.removeChild(
         colorGrid.childNodes[colorGrid.childNodes.length - 1]
       );
-
-      CURRENT_TINT--;
     }
   }
+  refreshAllTiles();
+}
+
+function refreshAllTiles() {
+  let currentColor = document.getElementById("colorValue").innerText;
+  let allColorTiles = document.getElementsByClassName("color-item");
+
+  let currentFactor = 1 / allColorTiles.length;
+  for (let i = 0; i < allColorTiles.length; i++) {
+    allColorTiles[i].style.backgroundColor = generateTint(
+      currentColor,
+      currentFactor * i
+    );
+  }
+
+  console.log(currentFactor);
 }
 
 function generateTint(colorValue, step) {
@@ -44,9 +50,9 @@ function generateTint(colorValue, step) {
   let g = (rgb >> 8) & 0xff;
   let b = (rgb >> 0) & 0xff;
 
-  let newR = generateTintComponent(r, step * FACTOR);
-  let newG = generateTintComponent(g, step * FACTOR);
-  let newB = generateTintComponent(b, step * FACTOR);
+  let newR = generateTintComponent(r, step);
+  let newG = generateTintComponent(g, step);
+  let newB = generateTintComponent(b, step);
 
   return `#${decToHex(newR)}${decToHex(newG)}${decToHex(newB)}`;
 }

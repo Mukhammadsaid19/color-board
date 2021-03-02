@@ -40,4 +40,6 @@ function changeRGB() {
   } else {
     colorValue.style.color = "#000000";
   }
+
+  refreshAllTiles();
 }
