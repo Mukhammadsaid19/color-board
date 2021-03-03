@@ -22,7 +22,7 @@
 
           <div class="sliders">
             <div>
-              <p>RED</p>
+              R
               <input
                 onChange="changeRGB()"
                 oninput="changeRGB()"
@@ -32,11 +32,20 @@
                 value="0"
                 min="0"
                 max="255"
+                class="color-slider red-slider"
+              />
+
+              <input
+                type="number"
+                class="color-counter"
+                min="0"
+                max="255"
+                value="0"
               />
             </div>
 
             <div>
-              <p>GREEN</p>
+              G
               <input
                 onChange="changeRGB()"
                 oninput="changeRGB()"
@@ -46,11 +55,19 @@
                 value="0"
                 min="0"
                 max="255"
+                class="color-slider green-slider"
+              />
+              <input
+                type="number"
+                class="color-counter"
+                min="0"
+                max="255"
+                value="0"
               />
             </div>
 
             <div>
-              <p>BLUE</p>
+              B
               <input
                 onChange="changeRGB()"
                 oninput="changeRGB()"
@@ -60,6 +77,14 @@
                 value="0"
                 min="0"
                 max="255"
+                class="color-slider blue-slider"
+              />
+              <input
+                type="number"
+                class="color-counter"
+                min="0"
+                max="255"
+                value="0"
               />
             </div>
           </div>
@@ -76,7 +101,12 @@
             <div id="tintsContent" class="show">
               <h1>Tints</h1>
 
-              <input type="text" class="count-input" />
+              <input
+                type="number"
+                class="tints-counter"
+                id="tintsCounter"
+                onchange="validateCounter()"
+              />
               <input
                 onChange="generateTints()"
                 oninput="generateTints()"

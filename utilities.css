@@ -1,32 +1,99 @@
-.tint-slider {
+input[type="range"] {
   appearance: none;
-
-  height: 15px;
-  background: #0081ed;
   outline: none;
   border-radius: 30px;
   opacity: 0.7;
   transition: opacity 0.2s;
 }
 
-.tint-slider:hover {
+input[type="range"]:hover {
   opacity: 1;
 }
 
-.tint-slider::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   appearance: none;
-  width: 40px;
-  height: 40px;
   border-radius: 20px;
-  background: #005ca9;
   cursor: pointer;
 }
 
-input[type="text"] {
+.tint-slider {
+  height: 15px;
+  background: #0081ed;
+}
+
+.tint-slider::-webkit-slider-thumb {
+  width: 40px;
+  height: 40px;
+  background: #005ca9;
+}
+
+.color-slider::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.red-slider {
+  height: 10px;
+  background: #f24a4a;
+}
+
+.red-slider::-webkit-slider-thumb {
+  background: #e41b1b;
+}
+
+.green-slider {
+  height: 10px;
+  background: #64c264;
+}
+
+.green-slider::-webkit-slider-thumb {
+  background: #1b9827;
+}
+
+.blue-slider {
+  height: 10px;
+  background: #0081ed;
+}
+
+.blue-slider::-webkit-slider-thumb {
+  background: #005ca9;
+}
+
+.tints-counter {
   width: 60px;
   height: 40px;
   padding: 0px 12px;
   margin: 0px 20px 0px 5px;
   font-size: 1.5em;
+  border-radius: 5px;
+}
+
+.color-counter {
+  width: 50px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 1em;
+  text-align: center;
+  outline: none;
+}
+input[type="number"] {
   font-family: Roboto, sans-serif;
+  appearance: textfield;
+  border: 1px solid #323232;
+}
+
+input[type="number"]:focus {
+  border: 2px solid #005ca9;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

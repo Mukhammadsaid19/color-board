@@ -1,6 +1,5 @@
 let tintsTab = document.getElementById("tintsTab");
 let shadesTab = document.getElementById("shadesTab");
-
 let tintsContent = document.getElementById("tintsContent");
 let shadesContent = document.getElementById("shadesContent");
 
