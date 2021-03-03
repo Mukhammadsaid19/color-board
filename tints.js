@@ -29,10 +29,10 @@ function generateTints() {
 }
 
 function validateCounter() {
-  tintsCounter.value = tintsCounter.value.replace(/[^0-9]/, "");
   let currentValue = parseInt(tintsCounter.value, 10);
-  if (currentValue <= 0) {
-    tintsCounter.value = "0";
+
+  if (currentValue <= 1) {
+    tintsCounter.value = "1";
   }
 
   if (currentValue >= 20) {

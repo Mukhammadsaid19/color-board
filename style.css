@@ -75,12 +75,10 @@ body {
 }
 
 .sliders div {
-  text-align: center;
+  width: 100%;
   padding: 0px 10px;
-}
-
-.sliders > div > p {
-  text-align: left;
+  margin-top: 20px;
+  font-weight: 600;
 }
 
 .tab-header {
